@@ -1,14 +1,3 @@
-/* 
-background : #c4ebfa
-header #03bfb1
-nav : #33c361
-aside #6edb6e
-content #0f98c6
-section #005b92
-footer #e6f7f5
-
-*/
-
 body {
     display: flex;
     text-align: center;
@@ -16,60 +5,73 @@ body {
     flex-direction: column;
     background-color: #c4ebfa;
     color: #fafafa;
-    font-size: 2em;
+    font-size: 40px;
 }
 
 header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background-color: #04bfb1;
     margin-top: 10px;
     margin-bottom: 10px;
 }
 
 nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background-color: #33c361;
     margin-top: 10px;
     margin-bottom: 10px;
 }
 
-div {
+body > div {
     display: flex;
 }
 
-div aside {
+aside {
     display: flex;
+    text-align: center;
     justify-content: center;
     align-items: center;
-    width: 35%;
     background-color: #6edb6e;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-right: 10px;
 }
 
 section {
-    width: 65%;
-    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
 }
 
-section .content {
+section > .content {
     display: flex;
     background-color: #0f98c6;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    flex-wrap: wrap;
+    font-size: 15px;
 }
 
-section article{
+.item {
+    width: 20%;
+    margin: 10px;
+}
+
+.images {
+    width: 163px;
+    height: 95px;
+}
+
+.images > img {
+    width: auto;
+    height: 96px;
+    margin: 0;
+    padding: 0;
+}
+
+.championName {
+    margin-bottom: 0px;
+}
+
+section .section {
+    background-color:  #005b92;;
     display: flex;
-    justify-content: center;
+    text-align: center;
     align-items: center;
-    background-color: #005b92;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    justify-content: center;
 }
 
 footer {
@@ -78,39 +80,4 @@ footer {
     align-items: center;
     background-color: #04bfb1;
     margin-top: 10px;
-}
-
-  
-section .content {
-    display: flex;
-    flex-direction: column;
-}
-
-.content div {
-    display: flex;
-    width: 80%;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-.content img {
-    width: 100px;
-    height: auto;
-}
-
-.content p {
-    font-size: 15px;
-}
-
-
-.content > div > .images {
-    width: 100px;
-    height: 59px;
-    border-color: #fafafa;
-    border-style: solid;
-    border-radius: 5px;
-}
-
-div > .texts {
-    
 }

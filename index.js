@@ -30,7 +30,7 @@ fetch(apiUrl).then(response => response.json()).then(data => {
         nameP.classList.add("championName");
         nameP.textContent = item.champion_name;
 
-        const rolesP = document.createElement("p");
+        const rolesP = document.createElement("span");
         rolesP.classList.add("championRoles");
         rolesP.textContent = item.champion_roles;
 

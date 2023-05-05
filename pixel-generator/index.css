@@ -4,6 +4,23 @@
   box-sizing: border-box;
   font-family: monospace;
 }
+
 body {
   background-color: #c4ebfa;  
+}
+
+.wrapper {
+  background-color: aliceblue;
+  width: 80vmin;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding: 40px 20px;
+  border-radius: 8px; 
+  /* transform 으로 x축을 -50% 만큼, y축을 -50% 만큼 이동시킨다. */
+  transform: translate(-50%, -50%);
+}
+
+label {
+  display: block;
 }

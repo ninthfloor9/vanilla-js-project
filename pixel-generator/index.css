@@ -24,3 +24,19 @@ body {
 label {
   display: block;
 }
+
+button {
+  background-color: #5DDEB1;
+  border: solid 3px;
+  border-color: #5DDEB1;
+  border-radius: 5px;
+}
+
+.options {
+  display: flex;
+}
+
+.opt-wrapper {
+  justify-content: space-between;
+
+}

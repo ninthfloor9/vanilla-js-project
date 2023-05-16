@@ -2,21 +2,19 @@ const apiUrl = "https://550h08fx77.execute-api.ap-northeast-2.amazonaws.com/fron
 
 fetch(apiUrl).then(response => response.json()).then(data => {
     const content = document.querySelector(".content");
-    const itemsHtml = data.Items.map(item => {
-
-        const itemDiv = document.createElement("div");
+    const createItem = (item) => {
+      const itemDiv = document.createElement("div");
         itemDiv.classList.add("item");
 
         const imageDiv = document.createElement("div");
         imageDiv.classList.add("images");
 
-        let championSplash;
+        const championSplash = document.createElement("img");
+
         if (item.champion_splash) {
-            championSplash = document.createElement("img");
             championSplash.src = item.champion_splash;
             championSplash.alt = "";
         } else {
-            championSplash = document.createElement("img");
             championSplash.src = "noimage.gif";
             championSplash.alt = "";
         }
@@ -27,15 +25,15 @@ fetch(apiUrl).then(response => response.json()).then(data => {
         splashLink.appendChild(imageDiv);
 
         const nameP = document.createElement("p");
-        nameP.classList.add("championName");
+        nameP.classList.add("text");
         nameP.textContent = item.champion_name;
 
-        const rolesP = document.createElement("span");
-        rolesP.classList.add("championRoles");
+        const rolesP = document.createElement("p");
+        rolesP.classList.add("text");
         rolesP.textContent = item.champion_roles;
 
         const difficutiesSpan = document.createElement("span");
-        difficutiesSpan.classList.add("stars");
+        difficutiesSpan.classList.add("text");
 
         if (item.champion_difficulty) {
             let star = "";
@@ -54,8 +52,8 @@ fetch(apiUrl).then(response => response.json()).then(data => {
         nameP.appendChild(difficutiesSpan);
 
         return itemDiv;
-        
-    });
+    }
+    const itemsHtml = data.Items.map(item => createItem(item));
     console.log(data);
     itemsHtml.forEach(item => {
         content.appendChild(item);

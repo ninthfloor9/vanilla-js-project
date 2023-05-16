@@ -1,83 +1,76 @@
 body {
+  background-color: #c4ebfa;
+  color: #fafafa;
+}
+
+/* reset user agent styles */
+p {
+  margin: 0;
+}
+
+.title {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.main-header {
+  background-color: #04bfb1;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.main-nav {
+  background-color: #33c361;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.main-container {
+  display: flex;
+  margin-bottom: 10px;
+}
+  .main-aside {
     display: flex;
-    text-align: center;
-    justify-content: center;
-    flex-direction: column;
-    background-color: #c4ebfa;
-    color: #fafafa;
-    font-size: 40px;
-}
-
-header {
-    background-color: #04bfb1;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-nav {
-    background-color: #33c361;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-body > div {
-    display: flex;
-}
-
-aside {
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
     background-color: #6edb6e;
     margin-right: 10px;
-}
+    align-items: center;
+  }
 
-section {
+  .main-section {
     display: flex;
     flex-direction: column;
+    width: 100%;
+  }
+    .content {
+      display: flex;
+      flex-wrap: wrap;
+      background-color: #0f98c6;
+      margin-bottom: 10px;
+      
+    }
+
+      .item {
+        margin: 15px;
+      }
+
+        .images {
+          width: 265px;
+          height: 200px;
+        }
+
+        .images > img {
+          width: 265px;
+          height: 184px;
+        }
+
+        .text {
+          text-align: center;
+        }
+
+.section {
+  background-color:  #005b92;;
 }
 
-section > .content {
-    display: flex;
-    background-color: #0f98c6;
-    flex-wrap: wrap;
-    font-size: 15px;
-}
-
-.item {
-    width: 20%;
-    margin: 10px;
-}
-
-.images {
-    width: 163px;
-    height: 95px;
-}
-
-.images > img {
-    width: auto;
-    height: 96px;
-    margin: 0;
-    padding: 0;
-}
-
-.championName {
-    margin-bottom: 0px;
-}
-
-section .section {
-    background-color:  #005b92;;
-    display: flex;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-}
-
-footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #04bfb1;
-    margin-top: 10px;
+.main-footer {
+  background-color: #04bfb1;
 }

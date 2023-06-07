@@ -38,3 +38,45 @@ let promise = new Promise(function(resolve, reject) {
 resolve(value) - 일이 성공적으로 끝나면 결과를 나타내는 value와 함께 호출
 
 */
+
+let promise = new Promise(function(resolve, reject) {
+  setTimeout(() => resolve('완료'), 1000);
+}); // resolve 나 reject 중 하나는 반드시 호출해야함
+
+console.log(promise); // Promise {<pending>} (1)
+
+setTimeout(() => {
+  console.log(promise);
+},2000);
+// Promise {<fulfilled>: '완료'} (2)
+
+let promise2 = new Promise(function(resolve, reject) {
+  setTimeout(() => reject("에러발생!"), 1000);
+});
+
+console.log(promise2); // Promise {<pending>} (1)
+
+setTimeout(() => {
+  console.log(promise2);
+},2000);
+// Promise {<rejected>: '에러발생!'}(2)
+
+/* 
+
+1. executor는 즉각 호출되었다. 
+2. resolve / reject에 1초 setTimeout을 줬다.
+3. 즉각 호출되었기 때문에 console.log 로 보는 promise 상태가 pending 이었다가
+4. 2초후에 호출되는 console.log 에는 fulfilled / rejected 가 되었다.
+*/
+
+
+
+// 프라미스 객체는 executor와 결과나 에러를 받을 소비함수를 이어주는 역할을 한다. 
+// then - .then
+
+/*
+promise.then(
+  function(resolve) {결과(result)를 다룬다.}, - 프라미스가 이행되었을때 실행되는 함수, 여기서 실행 결과를 받는다.
+  function(error) {에러를 다룬다.} - 프라미스가 거부되었을때 실행되는 함수, 여기서 에러를 받는다.
+)
+*/
